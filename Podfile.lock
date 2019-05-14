@@ -1,0 +1,16 @@
+PODS:
+  - FactualEngineSDK (9.5.0)
+
+DEPENDENCIES:
+  - FactualEngineSDK
+
+SPEC REPOS:
+  https://github.com/Factual/cocoapods.git:
+    - FactualEngineSDK
+
+SPEC CHECKSUMS:
+  FactualEngineSDK: 8916b1a50a7cd1381dee8f0eb7d910dcfe31a214
+
+PODFILE CHECKSUM: dce8cb5f4f9a44ebdc162de4d6891328c50b9302
+
+COCOAPODS: 1.6.1

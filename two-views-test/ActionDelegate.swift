@@ -20,8 +20,12 @@ class ActionDelegate: FactualActionDelegate {
     }
     
     // Arrays referenced outside of the ActionDelegate
-    static var circumstanceData = [String]()
-    static var placeData = [String]()
+    static var circumstanceData = [String]() {
+        didSet { NotificationCenter.default.post(name: ActionDelegate.newDataNotification, object: nil) }
+    }
+    static var placeData = [String]() {
+        didSet { NotificationCenter.default.post(name: ActionDelegate.newDataNotification, object: nil) }
+    }
     
     // Notification Name for when a circumstance is met
     static var newDataNotification = NSNotification.Name(rawValue: "refresh")
@@ -41,14 +45,12 @@ class ActionDelegate: FactualActionDelegate {
         let entryNumber = nextEntryNumber(.place)
         let placeData = "\(entryNumber): \nName: \(place.name)\nLatitude: \(place.latitude)\nLongitude: \(place.longitude)\nFactual ID: \(place.factualId)"
         ActionDelegate.placeData.append(placeData)
-        NotificationCenter.default.post(name: ActionDelegate.newDataNotification, object: nil)
     }
     
     // Logs an error to both arrays
     func circumstance(_ circumstance: FactualCircumstance, didFailWithError error: FactualError) {
         ActionDelegate.circumstanceData.append("\(nextEntryNumber(.circumstance)): \(error.message)")
         ActionDelegate.placeData.append("\(nextEntryNumber(.place)): \(error.message)")
-        NotificationCenter.default.post(name: ActionDelegate.newDataNotification, object: nil)
     }
     
     // Gets the next entry number from the previous one

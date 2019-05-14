@@ -8,10 +8,22 @@
 
 import FactualEngine
 import Foundation
+import NotificationCenter
 import UIKit
 
 class AttachedPlaceTableViewController: UITableViewController {
     
+    // Adds an observer to refresh the table view data
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self,
+                                       selector: #selector(refreshTable),
+                                       name: ActionDelegate.newDataNotification,
+                                       object: nil)
+    }
+    
+    // Generates a cell from circumstance data in ActionDelegate
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .value1, reuseIdentifier: "Place Cell")
         guard indexPath.row < ActionDelegate.placeData.count else { return cell }
@@ -34,6 +46,7 @@ class AttachedPlaceTableViewController: UITableViewController {
         return heightForView(text: ActionDelegate.placeData[indexPath.row])
     }
     
+    // Returns the height of a table view cell based on how much text it holds.
     private func heightForView(text:String) -> CGFloat{
         let label:UILabel = UILabel(frame: CGRect(x: 0,
                                                   y: 0,
@@ -45,6 +58,11 @@ class AttachedPlaceTableViewController: UITableViewController {
         
         label.sizeToFit()
         return label.frame.height
+    }
+    
+    // Refreshes data everytime a circumstance is met
+    @objc private func refreshTable() {
+        self.tableView.reloadData()
     }
 }
 

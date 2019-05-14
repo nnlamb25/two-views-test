@@ -74,9 +74,6 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="sHG-xf-jeQ"/>
-                    <connections>
-                        <outlet property="testCircumstanceButton" destination="wRi-eE-A7w" id="SqF-uG-OO7"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -85,8 +82,8 @@
         <!--Attached Place Table View Controller-->
         <scene sceneID="Nxa-fe-bu5">
             <objects>
-                <tableViewController id="xzP-Wf-UvQ" customClass="AttachedPlaceTableViewController" customModule="two_views_test" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6pX-qM-psY" customClass="Attac">
+                <tableViewController id="xzP-Wf-UvQ" customClass="AttachedPlaceTableViewController" customModule="two_views_test" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6pX-qM-psY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -113,7 +110,7 @@
         <!--Circumstance Data Table View Controller-->
         <scene sceneID="DN1-NL-Q2x">
             <objects>
-                <tableViewController id="rSM-9T-0UK" customClass="CircumstanceDataTableViewController" customModule="two_views_test" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="rSM-9T-0UK" customClass="CircumstanceDataTableViewController" customModule="two_views_test" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="DPY-Pu-NEM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
